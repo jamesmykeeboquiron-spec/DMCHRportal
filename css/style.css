@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #111;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)),
+    url("../assets/hr-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  background: rgba(15, 20, 25, 0.95);
+  border-right: 3px solid #ffd000;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.system-title {
+  color: #ffd000;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  background: #3b3b3b;
+  color: white;
+  border: none;
+  border-left: 4px solid #ffd000;
+  border-radius: 5px;
+  padding: 13px 14px;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-item i {
+  width: 24px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: #555;
+}
+
+.logout-btn {
+  margin-top: auto;
+  background: #d90000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #ff0000;
+}
+
+/* Main */
+.main-content {
+  flex: 1;
+  padding: 25px 20px;
+}
+
+.top-header h2 {
+  color: red;
+  font-size: 32px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.datetime {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#clock {
+  color: #ff3333;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#date {
+  color: #ffd000;
+  font-weight: bold;
+}
+
+/* Cards */
+.stats-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.stat-card {
+  min-height: 85px;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.stat-card h3 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.gold {
+  background: rgba(190, 150, 0, 0.9);
+  color: black;
+}
+
+.red {
+  background: rgba(160, 10, 20, 0.9);
+}
+
+.dark {
+  background: rgba(20, 20, 20, 0.9);
+}
+
+.green {
+  background: rgba(0, 110, 45, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 3px solid #ffd000;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-header h2 {
+    font-size: 26px;
+  }
+
+  #clock {
+    font-size: 24px;
+  }
+}
